@@ -1,0 +1,10 @@
+3. Check Branch Stock in admin
+4. Pushing list not requering (Category,Subcategory)
+5. Branch Delete
+6. Stock Transfer Not working
+7. Printing Problem
+Queries:
+1. Loan to Sale->
+2. Branchwise Price and Scheme
+Work at Payment Voucher -> Voucher Print and Edit
+Purchase Edit, Sale Edit

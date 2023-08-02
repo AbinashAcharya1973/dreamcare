@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order2bill</title>
+  <!-- Add the Tailwind CSS CDN link -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-2">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <img src="img/Order2bill_l.png" alt="Logo" class="h-8">
+        
+        <!-- Navigation Links -->
+        <ul class="flex space-x-4">
+          <li><a href="#" class="text-gray-600 hover:text-blue-600">Order List</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-blue-600">Login</a></li>          
+          <!-- Add more navigation links as needed -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="flex justify-center items-center h-screen">
+    <div class="w-96 p-4 bg-white rounded-lg shadow-md">
+      <!-- Google logo -->
+      <img src="img/Refine-your-idea-1.png" alt="Google Logo" height="180px" width="100px" class="mx-auto mb-4">
+      <!-- Search bar -->
+      <form class="relative">
+        <input type="text" placeholder="Search Google" class="w-full h-12 pl-12 pr-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent" />
+        <!-- Search icon -->
+        <svg class="w-6 h-6 text-gray-600 absolute top-3 left-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l5.79 5.79M10 18a8 8 0 100-16 8 8 0 000 16z"></path>
+        </svg>
+        <!-- Microphone icon -->
+        <svg class="w-6 h-6 text-gray-600 absolute top-3 right-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 10h16m-7 12l-1 1a7 7 0 01-9-9l1-1"></path>
+        </svg>
+        <!-- Drop-down suggestions -->
+        <ul class="mt-2 w-full bg-white border border-gray-300 rounded-lg shadow-md absolute z-10">
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Product 1</li>
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Product 2</li>
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Product 3</li>
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Product 4</li>
+          <!-- Add more suggestions as needed -->
+        </ul>
+      </form>
+      <!-- Search buttons -->
+      <div class="flex justify-center mt-6 space-x-4">
+        <button class="px-6 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400">Google Search</button>
+        <button class="px-6 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400">I'm Feeling Lucky</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
