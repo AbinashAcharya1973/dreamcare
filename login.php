@@ -1,9 +1,10 @@
 <?php
 // Assuming you have already established a database connection and stored it in the $conn variable
-include 'dbconfig.php';$conn= new mysqli($hostname,$username,$pwd,$databasename) or die("Could not connect to mysql".mysqli_error($con));
+include 'dbconfig.php';
+$conn = new mysqli($hostname, $username, $pwd, $databasename) or die("Could not connect to mysql" . mysqli_error($con));
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
-
+    $rip=$_SERVER['REMOTE_ADDR'];
     if (isset($data['username']) && isset($data['password'])) {
         $username = $data['username'];
         $password = $data['password'];
@@ -19,11 +20,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($result->num_rows == 1) {
             $response = ['success' => true];
-        } else {
+            if($rec=$result->fetch_assoc()){
+            $conn->query("delete from userlog where UserID=" . $rec['memid']);
+            $conn->query("insert into userlog (UserID,LoginID,IPAdd) values(" . $rec['memid'] . ",'" . $rec['membercode'] . "','" . $rip . "')");
+            $conn->query("insert into userlogbk (UserID,LoginID,IPAdd) values(" . $rec['memid'] . ",'" . $rec['membercode'] . "','" . $rip . "')");
+            }
+        }
+        else {
             $response = ['success' => false];
         }
 
         echo json_encode($response);
     }
 }
-?>

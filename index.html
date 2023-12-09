@@ -139,6 +139,27 @@
       </div>
       <br>
       <br>
+      <h4>LED BULB</h4>
+      <div class="row justify-content-center no-gutters mb-5 mb-lg-0" id="residential">
+        <div class="col-lg-6">
+          <img class="img-fluid" src="img/bolb.png" alt="">
+        </div>
+        <div class="col-lg-6">
+          <div class="bg-black text-center h-100 project">
+            <div class="d-flex h-100">
+              <div class="project-text w-100 my-auto text-center text-lg-left">
+                <h5 class="text-white">LED Bulb</h5>
+                <p class="mb-0 text-white-50">Better quality illumination</p>
+                <p class="mb-0 text-white-50">15 Watt</p>
+                <p class="mb-0 text-white-50">4 pcs, and 18 Months Warranty</p>
+                <br>
+                <br>                
+                <a href="#buy"><button class="btn btn-primary">Click to Buy</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <h4>ZORUMA</h4>
       <!-- Project Two Row -->
       <div class="row justify-content-center no-gutters" id="commercial">
@@ -160,7 +181,7 @@
         </div>
       </div>      
 </section>
-<section id="ref" class="about-section text-center">
+<!--<section id="ref" class="about-section text-center">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
@@ -181,7 +202,7 @@
           <li>Purchase one product then you get Rs100/ every month for 12 months (Rs100*12month=Rs 1200 only).</li>
         </ul>
         <p>You avail level Income:</p>
-        <ul>
+        <ul>      
           <li>1st level Rs 20/-</li>
           <li>2nd level Rs 10/-</li>
           <li>3rd level Rs 5/-</li>
@@ -202,7 +223,7 @@
       </div>
     </div>
 </div>
-</section>    
+</section>    -->
 <section id="buy" class="about-section text-center">
     <div class="container">
       <div class="row">
@@ -225,7 +246,7 @@
                 <label for="name">Sponsor ID</label>
                 <input type="text" class="form-control" name="sname" id="sname" v-model="enspcode" placeholder="1-22-2023" @keyup="getspcode()">
                 <p>{{spname}}</p>
-                <input type="hidden" name="sp_id" id="sp_id"/>
+                <input type="hidden" name="sp_id" id="sp_id" value="1"/>
             </div>
 
               <div class="mb-3">
@@ -243,7 +264,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="state">State</label>
-                  <select class="form-control" name="" v-model="scode">
+                  <select class="form-control" name="state" v-model="scode">
                     <option v-bind:value="statec.STCode" v-for="statec in StateCodes">{{statec.StateName}}</option>
                   </select>
                 </div>
@@ -272,10 +293,11 @@
                   <input type="text" class="form-control" name="ifsc" id="ifsc" placeholder="IFSC" required>
                 </div>-->
                 <div class="mb-3">
-                  <label for="pin">Select Product</label>
+                  <label for="product">Select Product</label>
                   <select class="form-control" name="products" id="product">
                     <option value="Zorich">Zorich</option>
                     <option value="Zorum">Zoruma</option>
+                    <option value="4 LED BULBS">4 LED BULBS</option>
                   </select>
                 </div>
                 <div class="mb-3">
@@ -286,6 +308,9 @@
                   <label for="pin">Freight</label>
                   <input type="text" class="form-control" name="frieght" id="frieght" placeholder="Freight" value="Rs.50">
                 </div>
+                <label class="mb-3">
+                  <input type="checkbox" name="onfreight"> Freight Applicable
+                </label>
                 <div class="mb-3">
                   <label for="pin">Total Cost</label>
                   <input type="text" class="form-control" name="total" id="total" placeholder="Rs. 1050">
@@ -301,7 +326,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="pin">Transaction ID</label>
-                  <input type="text" class="form-control" name="txid" id="txid" placeholder="UTR No" required="true">
+                  <input type="text" class="form-control" name="txid" id="txid" placeholder="UTR No">
                 </div>
                 <!--<a href="#" class="float-end text-decoration-none">Reset Password</a>-->
 
@@ -344,7 +369,11 @@
 
               <div class="mb-3">
                   <label for="address">Password</label>
-                  <input type="password" class="form-control" name="pwd" id="pwd" placeholder="Password" v-model="password">
+                  <input type="password" :type="showPassword ? 'text' : 'password'" class="form-control" name="pwd" id="pwd" placeholder="Password" v-model="password">
+                  <label>
+                    <input type="checkbox" v-model="showPassword">
+                    Show Password
+                  </label>
               </div>
               
               <div class="mb-3">
@@ -417,7 +446,7 @@
               <i class="fas fa-mobile-alt text-primary mb-2"></i>
               <h4 class="text-uppercase m-0">Phone</h4>
               <hr class="my-4">              
-              <div class="small text-black-50">9437120198</div>
+              <div class="small text-black-50">8018036728</div>
             </div>
           </div>
         </div>
@@ -464,6 +493,7 @@
         password: '',
         enspcode:'',
         spname:'Sponsor Name',
+        showPassword:false
       },
       mounted:function(){
                     axios.post('gtstatecode.php')
@@ -530,7 +560,20 @@
               
     });
   </script>
- 
+  <script src="//code.tidio.co/e21pk1f4oax3jvlqc71b0eubhmfvw9kc.js" async></script>
+<!--Start of Tawk.to Script-->
+<!--<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/64e28c9f94cf5d49dc6b8132/1h8afak65';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>-->
+  <!--End of Tawk.to Script-->
 </body>
 
 </html>

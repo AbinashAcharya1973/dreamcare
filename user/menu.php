@@ -1,14 +1,14 @@
 <?php
 include 'dbconfig.php';
 
-$conn = new mysqli($hostname, $username, $pwd, 'ordermanagement') or die("Could not connect to mysql" . mysqli_error($con));
+//$conn = new mysqli($hostname, $username, $pwd, 'ordermanagement') or die("Could not connect to mysql" . mysqli_error($con));
 ?>
 <div id="layoutSidenav_nav">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav" id="menu">
                 <div class="sb-sidenav-menu-heading">Core</div>
-                <a class="nav-link active" href="/">
+                <a class="nav-link active" href="/user/index.php">
                     <li class='nav-item'>
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
@@ -24,7 +24,8 @@ $conn = new mysqli($hostname, $username, $pwd, 'ordermanagement') or die("Could 
                     <nav class="sb-sidenav-menu-nested nav">
                         <!--<div class="sb-sidenav-menu-heading">Company Master</div>-->
                         <a class="nav-link" href="downline.php">Downline</a>
-
+                        <a class="nav-link" href="memberlist.php">Member List</a>
+                        <a class="nav-link" href="genology.php">Genology</a>
                     </nav>
                 </div>
                 <!--<div class="sb-sidenav-menu-heading">T</div>-->
@@ -35,7 +36,7 @@ $conn = new mysqli($hostname, $username, $pwd, 'ordermanagement') or die("Could 
                 </a>
                 <div class="collapse" id="collapseLayouts_p" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Payout List</a>
+                        <a class="nav-link" href="payoutlist.php">Payout List</a>
                     </nav>
                 </div>
                 <!--<div class="sb-sidenav-menu-heading">Account</div>-->
@@ -52,7 +53,7 @@ $conn = new mysqli($hostname, $username, $pwd, 'ordermanagement') or die("Could 
                         <a class="nav-link" href="withdraw.php">Withdraw Request</a>
                     </nav>
                 </div>            
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="profile.php">
                     <li class='nav-item'>
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Profile

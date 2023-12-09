@@ -15,7 +15,7 @@ $conn = new mysqli($hostname, $username, $pwd, $databasename);
     if($result->num_rows>0){
 
     }else{
-        header("Location: login.php");
+        //header("Location: login.php");
     }
 ?>
 <!DOCTYPE html>

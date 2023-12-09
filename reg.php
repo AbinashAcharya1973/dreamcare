@@ -99,7 +99,7 @@
       $joingindate = date("Y-m-d H:i:s");
       $totalamount = $_POST['total'];
       $txid = $_POST['txid'];
-      if (is_null($txid)) {
+      if (is_null($txid)||$txid=='') {
         $paid = 'N';
         $mactive = 'N';
       } else {
@@ -153,9 +153,20 @@
         $affiliatelink = 'http://dreamcaresolution.in/refjoin.php?ref=' . $memid;
         //$encodedUrl = urlencode($originalUrl);
         $conn->query("update members set affiliatelink='" . $affiliatelink . "',membercode='" . $membercode . "' where memid=" . $memid);
-        if ($sponsorid != 1)
+        if($_POST['onfreight'])
+        $conn->query("insert into invledger (tdate,particulars,withdrawal,memid) values('".$joingindate."','Purchase',1050,".$memid.")");
+        else
+        $conn->query("insert into invledger (tdate,particulars,withdrawal,memid) values('".$joingindate."','Purchase',1000,".$memid.")");
+        if($paid=='Y'){
+          if($_POST['onfreight'])
+          $conn->query("insert into invledger (tdate,particulars,income,memid,remarks) values('".$joingindate."','Received@Purchase',1050,".$memid.",'".$txid."')");
+          else
+          $conn->query("insert into invledger (tdate,particulars,income,memid,remarks) values('".$joingindate."','Received@Purchase',1000,".$memid.",'".$txid."')");
+        }
+        if ($sponsorid != 1){
           $conn->query("update members set totalreferral=totalreferral+1 where memid=" . $sponsorid);
-          $conn->query("insert into ledger (tdate,particulars,income,memid) values('".$joingindate."','On Joining',200,".$memid.")");
+          $conn->query("insert into ledger (tdate,particulars,income,memid) values('".$joingindate."','On Referral',100,".$sponsorid.")");
+        }
         $message = "Thank you for Purchasing the product.";
       } else {
         $message = "Registration failed: " . $stmt->error;

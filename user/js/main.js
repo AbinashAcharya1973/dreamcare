@@ -5,7 +5,8 @@ var mainMixin={
         ulid:"",
         sord:"",
         pord:"",
-        Proimg:"" 
+        Proimg:"",
+        onfreight:"", 
         },
         mounted:function(){
                     var login=false;                    
